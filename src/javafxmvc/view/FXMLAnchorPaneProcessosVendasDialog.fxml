@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneProcessosVendasDialogController">
+   <children>
+      <HBox layoutX="52.0" layoutY="26.0" prefHeight="291.0" prefWidth="310.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="26.0">
+         <children>
+            <GridPane prefHeight="291.0" prefWidth="310.0" style="-fx-border-color: #505050; -fx-border-width: 2;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="137.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="296.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="56.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="122.0" minHeight="7.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="169.0" minHeight="6.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="212.0" minHeight="6.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="152.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Cliente:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboBoxVendasCliente" prefHeight="22.0" prefWidth="179.0" promptText="Selecione o cliente" GridPane.columnIndex="1" />
+                  <Label text="Data:" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Item:" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pago:" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Produto:" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Valor:" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldVendasValor" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <DatePicker fx:id="DatePickerData" promptText="dd/mm/aaaa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TableView fx:id="tableViewVendasProduto" prefHeight="152.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <columns>
+                      <TableColumn fx:id="tableColumnItemDeVendaProduto" prefWidth="93.0" text="Produto" />
+                      <TableColumn fx:id="tableColumnItemDeVendaQuantidade" prefWidth="69.0" text="Quantidade" />
+                        <TableColumn fx:id="tableColumnItemDeVendaValor" prefWidth="70.0" text="Valor" />
+                    </columns>
+                  </TableView>
+                  <ComboBox fx:id="comboBoxVendasProduto" prefHeight="22.0" prefWidth="139.0" promptText="Selecione o produto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox fx:id="checkBoxVendasPago" mnemonicParsing="false" prefHeight="25.0" prefWidth="29.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  </CheckBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </GridPane>
+         </children>
+      </HBox>
+      <Button fx:id="buttonAdicionar" layoutX="302.0" layoutY="107.0" mnemonicParsing="false" onAction="#handleButtonAdicionar" prefHeight="22.0" prefWidth="57.0" text="Add" />
+      <Button fx:id="buttonConfirmar" layoutX="116.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" style="-fx-background-color: #30EE30;" text="Confirmar" />
+      <Button fx:id="buttonCancelar" layoutX="230.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleButtonCancelar" style="-fx-background-color: #EE3030;" text="Cancelar" textFill="WHITE" />
+      <TextField fx:id="textFieldItemDeVendaQuantidade" layoutX="265.0" layoutY="107.0" prefHeight="22.0" prefWidth="38.0" />
+   </children>
+</AnchorPane>
